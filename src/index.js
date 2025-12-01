@@ -1,20 +1,8 @@
-import {
-  slidingWindow,
-  slidingWindowBruteForce,
-  slidingWindowPrefixSum,
-  slidingWindowDivideConquer,
-  minLengthSubArray,
-  LongestSubstring,
-  LongestSubarrayWithKDistinct
-} from "./arrays/sliding_window.js";
-import {
-  prefix,
-  prefix_range_sum,
-  prefix_XOR,
-  Subarray_with_XOR,
-  prefix_range_XOR,
-  Unique_Element_Problem,
-} from "./arrays/prefix.js";
+import {countAnagramsBruteForce,firstNegativeNumBrute,anagramSlidingWindow,firstNegativeNumber} from "./arrays/sliding_window.js";
+
+import {BruteForce} from "./playgorund/test.js"
+
+// import Prifix from "./arrays/prefix.js";
 import { countFrequenciesElement } from "./arrays/prefix.early.test/arrayMethods.js";
 import { print } from "./print.js";
 
@@ -33,18 +21,27 @@ import { print } from "./print.js";
   Sliding window problems
 */
 
-print(slidingWindowPrefixSum([2, 1, 5, 3, 9, 1], 3));
-print(slidingWindow([2, 1, 5, 1, 3, 2], 3));
-print(slidingWindowBruteForce([2, 1, 5, 1, 3, 2], 3));
-print(slidingWindowPrefixSum([2, 1, 5, 3, 9, 1], 3));
-print(slidingWindowDivideConquer([2, 1, 5, 1, 3, 2], 3));
+// print(slidingWindowPrefixSum([2, 1, 5, 3, 9, 1], 3));
+// print(slidingWindow([2, 1, 5, 1, 3, 2], 3));
+// print(slidingWindowBruteForce([2, 1, 5, 1, 3, 2], 3));
+// print(slidingWindowPrefixSum([2, 1, 5, 3, 9, 1], 3));
+// print(slidingWindowDivideConquer([2, 1, 5, 1, 3, 2], 3));
 
-const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
-const numbs = [1, 2, 5, 4, 88, 4, 5, 21];
-print(countFrequenciesElement(fruits));
-print(countFrequenciesElement(numbs));
-print(minLengthSubArray([2, 3, 1, 2, 4, 3], 7));
-print(LongestSubstring("abcabcbb"));
-console.log("ad")
-console.log("ad`")
-print(LongestSubarrayWithKDistinct([1, 2, 1, 0, 1, 1, 0], 4));
+// const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+// const numbs = [1, 2, 5, 4, 88, 4, 5, 21];
+// print(countFrequenciesElement(fruits));
+// print(countFrequenciesElement(numbs));
+// print(minLengthSubArray([2, 3, 1, 2, 4, 3], 7));
+// print(LongestSubstring("abcabcbb"));
+// console.log("ad")
+// console.log("ad`")
+// print(LongestSubarrayWithKDistinct([1, 2, 1, 0, 1, 1, 0], 4));
+
+
+// print(SlidingWin([1,2,5,11,2,36],3))
+// print(BruteForce([2, -1, -7, 8, -15, 30, 16, 28],3))
+print(firstNegativeNumBrute([2, -1, -7, 8, -15, 30, 16, 28], 3))
+print(firstNegativeNumber([2, -1, -7, 8, -15, 30, 16, 28], 3))
+
+// print(countAnagramsBruteForce("forxxorfdofrforrof",'for'))
+// print(anagramSlidingWindow("forxxorfdofrforrof",'for'))

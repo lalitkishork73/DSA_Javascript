@@ -112,7 +112,7 @@ export function LongestSubarrayWithKDistinct(arr, k) {
   let maxLen = 0;
   let left = 0;
   let sum = 0;
-  
+
   for (let right = 0; right < arr.length; right++) {
     sum += arr[right];
     while (sum > k && left <= right) {
@@ -123,9 +123,116 @@ export function LongestSubarrayWithKDistinct(arr, k) {
   }
 
   return maxLen;
-  
-  
-  
+
   // Time complexity O(n)
   // Space complexity O(1)
+}
+
+export function SlidingWin(arr, k) {
+  try {
+    let prefix = [];
+    console.log(arr);
+    prefix[0] = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      prefix.push(arr[i] + prefix[i - 1]);
+    }
+
+    return prefix;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+//Js implementation of anagram sunstring
+
+export function countAnagramsBruteForce(s, p) {
+  const k = p.length;
+  const n = s.length;
+  const sortedP = p.split("").sort().join("");
+  let count = 0;
+
+  for (let i = 0; i < n - k; i++) {
+    let sub = s.substring(i, i + k);
+    let sortedSub = sub.split("").sort().join("");
+    if (sortedP === sortedSub) count++;
+  }
+
+  return count;
+}
+
+//
+
+export function anagramSlidingWindow(s, p) {
+  const k = p.length;
+  const n = s.length;
+  let ans = 0;
+  let i = 0;
+  let j = 0;
+  const freq = new Map();
+
+  for (let ch of p) freq.set(ch, (freq.get(ch) || 0) + 1);
+  let count = freq.size;
+
+  while (j < n) {
+    const end = s[j];
+    if (freq.has(end)) {
+      freq.set(end, freq.get(end) - 1);
+      if (freq.get(end) === 0) count--;
+    }
+    if (j - i + 1 < k) j++;
+    else if (j - i + 1 === k) {
+      if (count === 0) ans++;
+
+      const start = s[i];
+      if (freq.has(start)) {
+        if (freq.get(start) === 0) {
+          count++;
+        }
+        freq.set(start, freq.get(start) + 1);
+      }
+      j++;
+      i++;
+    }
+  }
+
+  return ans;
+}
+
+export function firstNegativeNumBrute(ar, k) {
+  let ans = [];
+  for (let i = 0; i < ar.length - k + 1; i++) {
+    let firstNegative = 0;
+    for (let j = i; j < i + k; j++) {
+      if (ar[j] < 0) {
+        firstNegative = ar[j];
+        break;
+      }
+    }
+    if (firstNegative == 0) ans.push(0);
+    ans.push(firstNegative);
+  }
+
+  return ans;
+}
+
+export function firstNegativeNumber(ar, k) {
+  const n = ar.length;
+  let ans = [];
+  let neg = [];
+  let i = 0;
+  let j = 0;
+
+  while (j < n) {
+    if (ar[j] < 0) neg.push(ar[j]);
+    if (j - i + 1 < k) j++;
+    else {
+      ans.push(neg.length == 0 ? 0 : neg[0]);
+      if (neg[0] == ar[i]) neg.shift();
+
+      i++;
+      j++;
+    }
+  }
+
+  return ans;
 }
