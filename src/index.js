@@ -1,6 +1,13 @@
-import {countAnagramsBruteForce,firstNegativeNumBrute,anagramSlidingWindow,firstNegativeNumber} from "./arrays/sliding_window.js";
+import {
+  countAnagramsBruteForce,
+  firstNegativeNumBrute,
+  anagramSlidingWindow,
+  firstNegativeNumber,
+  MaxNumberSubArray,
+  MaxNumberSubArrayBF
+} from "./arrays/sliding_window.js";
 
-import {BruteForce} from "./playgorund/test.js"
+import { BruteForce } from "./playgorund/test.js";
 
 // import Prifix from "./arrays/prefix.js";
 import { countFrequenciesElement } from "./arrays/prefix.early.test/arrayMethods.js";
@@ -37,11 +44,15 @@ import { print } from "./print.js";
 // console.log("ad`")
 // print(LongestSubarrayWithKDistinct([1, 2, 1, 0, 1, 1, 0], 4));
 
-
 // print(SlidingWin([1,2,5,11,2,36],3))
 // print(BruteForce([2, -1, -7, 8, -15, 30, 16, 28],3))
-print(firstNegativeNumBrute([2, -1, -7, 8, -15, 30, 16, 28], 3))
-print(firstNegativeNumber([2, -1, -7, 8, -15, 30, 16, 28], 3))
+// print(firstNegativeNumBrute([2, -1, -7, 8, -15, 30, 16, 28], 3));
+// print(firstNegativeNumber([2, -1, -7, 8, -15, 30, 16, 28], 3));
 
 // print(countAnagramsBruteForce("forxxorfdofrforrof",'for'))
 // print(anagramSlidingWindow("forxxorfdofrforrof",'for'))
+
+
+
+print(MaxNumberSubArray([1,3,-1,-3,5,3,6,7],3))
+print(MaxNumberSubArrayBF([1,3,-1,-3,5,3,6,7],3))

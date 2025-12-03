@@ -236,3 +236,48 @@ export function firstNegativeNumber(ar, k) {
 
   return ans;
 }
+
+export function MaxNumberSubArrayBF(num, k) {
+  const n = num.length;
+  const result = [];
+
+  for (let i = 0; i < n - k + 1; i++) {
+    let max = 0;
+    for (let j = i; j < i + k; j++) {
+      if (max < num[j]) {
+        max = num[j];
+      }
+    }
+
+    result.push(max);
+  }
+
+  return result;
+}
+
+export function MaxNumberSubArray(num, k) {
+  const n = num.length;
+  const deque = [];
+  const result = [];
+  let i = 0;
+  let j = 0;
+
+  while (j < n) {
+    while (deque.length && num[deque[deque.length - 1]] <= num[j]) {
+      deque.pop();
+    }
+    deque.push(j);
+
+    if (j - i + 1 < k) j++;
+    else if (j - i + 1 === k) {
+      result.push(num[deque[0]]);
+
+      if (deque[0] == i) deque.shift();
+
+      i++;
+      j++;
+    }
+  }
+
+  return result;
+}
