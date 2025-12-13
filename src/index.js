@@ -8,7 +8,7 @@ import {
 } from "./arrays/sliding_window.js";
 
 import {data} from '../data/dataset.js'
-import {ArrayMethodMedium} from './coreMethodsJs/arrayMethods.js'
+import {ArrayMethodMedium,ArrayMethodMediumLevel2} from './coreMethodsJs/arrayMethods.js'
 import { BruteForce } from "./playgorund/test.js";
 
 // import Prifix from "./arrays/prefix.js";
@@ -59,3 +59,4 @@ import { print } from "./print.js";
 print(MaxNumberSubArray([1,3,-1,-3,5,3,6,7],3))
 print(MaxNumberSubArrayBF([1,3,-1,-3,5,3,6,7],3))
 print(ArrayMethodMedium(data))
+print(ArrayMethodMediumLevel2(data))
