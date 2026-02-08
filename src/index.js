@@ -56,7 +56,7 @@ import { print } from "./print.js";
 
 
 
-print(MaxNumberSubArray([1,3,-1,-3,5,3,6,7],3))
-print(MaxNumberSubArrayBF([1,3,-1,-3,5,3,6,7],3))
-print(ArrayMethodMedium(data))
-print(ArrayMethodMediumLevel2(data))
+// print(MaxNumberSubArray([1,3,-1,-3,5,3,6,7],3))
+// print(MaxNumberSubArrayBF([1,3,-1,-3,5,3,6,7],3))
+// print(ArrayMethodMedium(data))
+// print(ArrayMethodMediumLevel2(data))
