@@ -60,3 +60,34 @@ import { print } from "./print.js";
 // print(MaxNumberSubArrayBF([1,3,-1,-3,5,3,6,7],3))
 // print(ArrayMethodMedium(data))
 // print(ArrayMethodMediumLevel2(data))
+
+
+
+let strs = ["flower", "flow", "flight"]
+var longestCommonPrefix = function (strs) {
+  if (strs.length === 0) return ""
+
+  let prefix = strs[0]
+
+  for (let i = 1; i < strs.length; i++) {
+    let j = 0
+
+    while (
+      j < prefix.length &&
+      j < strs[i].length &&
+      prefix[j] === strs[i][j]
+    ) {
+      j++
+    }
+
+    prefix = prefix.slice(0, j)
+    console.log(prefix)
+
+    if (prefix === "") return ""
+  }
+
+  return prefix
+}
+
+
+console.log(longestCommonPrefix(strs))
