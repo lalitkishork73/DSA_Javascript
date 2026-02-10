@@ -13,7 +13,9 @@ import { BruteForce } from "./playgorund/test.js";
 
 // import Prifix from "./arrays/prefix.js";
 import { countFrequenciesElement } from "./arrays/prefix.early.test/arrayMethods.js";
+import { LongestSubarrayWithKDistinct } from "./arrays/sliding_window.js";
 import { print } from "./print.js";
+import { longestCommonPrefix } from "./arrays/prefix.js";
 
 /* 
   Prefix comulative sum range proplems 
@@ -64,30 +66,4 @@ import { print } from "./print.js";
 
 
 let strs = ["flower", "flow", "flight"]
-var longestCommonPrefix = function (strs) {
-  if (strs.length === 0) return ""
-
-  let prefix = strs[0]
-
-  for (let i = 1; i < strs.length; i++) {
-    let j = 0
-
-    while (
-      j < prefix.length &&
-      j < strs[i].length &&
-      prefix[j] === strs[i][j]
-    ) {
-      j++
-    }
-
-    prefix = prefix.slice(0, j)
-    console.log(prefix)
-
-    if (prefix === "") return ""
-  }
-
-  return prefix
-}
-
-
-console.log(longestCommonPrefix(strs))
+print(longestCommonPrefix(strs))
