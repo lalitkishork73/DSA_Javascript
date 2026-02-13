@@ -67,3 +67,4 @@ import { longestCommonPrefix } from "./arrays/prefix.js";
 
 let strs = ["flower", "flow", "flight"]
 print(longestCommonPrefix(strs))
+print(longestCommonPrefix(strs))
