@@ -68,3 +68,30 @@ import { longestCommonPrefix } from "./arrays/prefix.js";
 let strs = ["flower", "flow", "flight"]
 print(longestCommonPrefix(strs))
 print(longestCommonPrefix(strs))
+
+
+  print("Try programiz.pro")
+
+
+
+lists = ["flower", "flow", "flight"]
+
+
+def macho(strs):
+prefix = strs[0]
+
+for i in strs[1:]:
+j = 0
+
+while j < len(prefix) and len(i) and prefix[j] == i[j]:
+j += 1;
+
+prefix = prefix[:j]
+
+if not prefix:
+  break
+
+
+return prefix
+
+print(macho(lists))
